@@ -6,7 +6,8 @@ pygame.init()
 screen = pygame.display.set_mode((1200, 800))
 r = pygame.Rect(0, 0, 100, 200)
 pygame.draw.rect(screen, (255, 0, 0), r, 0)
-pygame.draw.circle(screen, (255, 0, 0), (300, 300), 20)
+pos = (300, 300)
+pygame.draw.circle(screen, (255, 0, 0), pos, 20)
 
 while True:
     for event in pygame.event.get():
@@ -16,6 +17,7 @@ while True:
             sys.exit()
         if event.type == pygame.KEYDOWN:
             print(event.key == pygame.K_SPACE)
+            pygame.draw.circle(screen, (0, 255, 0), pos, 20)
     pygame.display.flip()
 
 
